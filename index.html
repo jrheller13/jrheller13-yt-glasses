@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=600, initial-scale=1.0, user-scalable=no">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>YT Glance</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📺 YT Glance</h1>
+            <input type="text" id="search" placeholder="Paste YouTube URL or Video ID" onkeypress="if(event.key==='Enter') playVideo()">
+            <button onclick="playVideo()">▶ Play</button>
+            <button onclick="toggleFullScreen()">⛶ Full Screen</button>
+        </header>
+
+        <main>
+            <div id="player-container" class="player-container">
+                <iframe id="ytplayer" 
+                        width="560" 
+                        height="315" 
+                        src="https://www.youtube-nocookie.com/embed/dQw4w9wgxcq?autoplay=1&modestbranding=1&rel=0&playsinline=1" 
+                        frameborder="0" 
+                        allowfullscreen 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        referrerpolicy="strict-origin-when-cross-origin">
+                </iframe>
+            </div>
+
+            <div class="controls">
+                <button onclick="prevVideo()">⏮ Prev</button>
+                <button onclick="togglePause()">⏯ Pause/Play</button>
+                <button onclick="nextVideo()">⏭ Next</button>
+            </div>
+
+            <div id="status" class="status">Ready • History saved automatically • Running on localhost</div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
